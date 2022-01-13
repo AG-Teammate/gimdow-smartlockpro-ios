@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CA01F37A9989E27DDF7FDEA8 /* GimdowBleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01FD26AF404D12C291AFD0 /* GimdowBleHandler.swift */; };
+		CA01F4EB894848AA6308AA3C /* ProtocolV2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01FE3F267D55DC659838C5 /* ProtocolV2Tests.swift */; };
+		CA01F645AF19999B9E6FCB6B /* GimdowLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01F5767FFDECC4019F5B9F /* GimdowLibTests.swift */; };
+		CA01F8AFC34C8F4D0642EE22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA01F35C2FBA703AD76EC1E4 /* Preview Assets.xcassets */; };
+		CA01F8E6BE2B3B82093692BE /* GimdowLibUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01F7A1665F9AD70BB9E9B4 /* GimdowLibUITests.swift */; };
+		CA01F90DA0A438B457F67CF7 /* GimdowBleDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01F93CC156A283AB79E97C /* GimdowBleDevice.swift */; };
+		CA01F9A14462FF66C86B7D09 /* GimdowProtocolV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01F4A5007F203B50FE53C6 /* GimdowProtocolV2.swift */; };
+		CA01FAB901EF7F207900F712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA01FCC7CA14E962C3BDA91A /* Assets.xcassets */; };
+		CA01FAF75C93BAC50D6CA077 /* GimdowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01F3B5461C8B4AC37FF2AA /* GimdowError.swift */; };
+		CA01FB3BE0F48DD3A4C34DAD /* GimdowBytesUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01F5922B2B89D2813B8CC6 /* GimdowBytesUtils.swift */; };
+		CA01FDD3B78C94B948F3AC6B /* GimdowLibUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01F3B3A9ECB11999BA6043 /* GimdowLibUITestsLaunchTests.swift */; };
+		CA01FE66E80351443CCCCC58 /* BytesUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01F135FE8CBA1A02BACAF3 /* BytesUtilsTests.swift */; };
+		CA01FE677904DCB25647B13B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01F8CAFDF520EBC3CAE22D /* ContentView.swift */; };
+		CA01FF603782ACA140172C27 /* GimdowLibApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01F7C2EE292ECDC39E2AB0 /* GimdowLibApp.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CA01F444863372FA8BFB7F2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA01F574D91C3021DDC44D54 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA01F692CF8B690243881928;
+			remoteInfo = GimdowLib;
+		};
+		CA01FFC09E264193BA4C28CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA01F574D91C3021DDC44D54 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA01F692CF8B690243881928;
+			remoteInfo = GimdowLib;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CA01F135FE8CBA1A02BACAF3 /* BytesUtilsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BytesUtilsTests.swift; sourceTree = "<group>"; };
+		CA01F266114CF9420D77F5C7 /* GimdowLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GimdowLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA01F35C2FBA703AD76EC1E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CA01F3B3A9ECB11999BA6043 /* GimdowLibUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GimdowLibUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CA01F3B5461C8B4AC37FF2AA /* GimdowError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GimdowError.swift; sourceTree = "<group>"; };
+		CA01F4A5007F203B50FE53C6 /* GimdowProtocolV2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GimdowProtocolV2.swift; sourceTree = "<group>"; };
+		CA01F5767FFDECC4019F5B9F /* GimdowLibTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GimdowLibTests.swift; sourceTree = "<group>"; };
+		CA01F5922B2B89D2813B8CC6 /* GimdowBytesUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GimdowBytesUtils.swift; sourceTree = "<group>"; };
+		CA01F5B6B942C37C068EE002 /* GimdowLibUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GimdowLibUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA01F7A1665F9AD70BB9E9B4 /* GimdowLibUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GimdowLibUITests.swift; sourceTree = "<group>"; };
+		CA01F7C2EE292ECDC39E2AB0 /* GimdowLibApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GimdowLibApp.swift; sourceTree = "<group>"; };
+		CA01F8CAFDF520EBC3CAE22D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CA01F93CC156A283AB79E97C /* GimdowBleDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GimdowBleDevice.swift; sourceTree = "<group>"; };
+		CA01FCC7CA14E962C3BDA91A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CA01FD26AF404D12C291AFD0 /* GimdowBleHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GimdowBleHandler.swift; sourceTree = "<group>"; };
+		CA01FE3F267D55DC659838C5 /* ProtocolV2Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolV2Tests.swift; sourceTree = "<group>"; };
+		CA01FF1F770AC00BA6F651A1 /* GimdowLib.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GimdowLib.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CA01F003662331CE8CA0AD0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA01F8A5C10CB126C298F9C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA01FB9E053C8E66D52AA369 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CA01F3C10D22E11C80B6C930 = {
+			isa = PBXGroup;
+			children = (
+				CA01F7D6E4C7E3F38635F161 /* Products */,
+				CA01F93EB15E56C76F3AEF42 /* GimdowLib */,
+				CA01F780886E0717FD568DD0 /* GimdowLibTests */,
+				CA01FF069CD361962C071A93 /* GimdowLibUITests */,
+			);
+			sourceTree = "<group>";
+		};
+		CA01F780886E0717FD568DD0 /* GimdowLibTests */ = {
+			isa = PBXGroup;
+			children = (
+				CA01F5767FFDECC4019F5B9F /* GimdowLibTests.swift */,
+				CA01F135FE8CBA1A02BACAF3 /* BytesUtilsTests.swift */,
+				CA01FE3F267D55DC659838C5 /* ProtocolV2Tests.swift */,
+			);
+			path = GimdowLibTests;
+			sourceTree = "<group>";
+		};
+		CA01F7D6E4C7E3F38635F161 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA01FF1F770AC00BA6F651A1 /* GimdowLib.app */,
+				CA01F266114CF9420D77F5C7 /* GimdowLibTests.xctest */,
+				CA01F5B6B942C37C068EE002 /* GimdowLibUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CA01F93EB15E56C76F3AEF42 /* GimdowLib */ = {
+			isa = PBXGroup;
+			children = (
+				CA01FCC7CA14E962C3BDA91A /* Assets.xcassets */,
+				CA01FE1A49FAF87715A695E9 /* Preview Content */,
+				CA01F7C2EE292ECDC39E2AB0 /* GimdowLibApp.swift */,
+				CA01F8CAFDF520EBC3CAE22D /* ContentView.swift */,
+				CA01FCB62910A8BB91596419 /* Lib */,
+			);
+			path = GimdowLib;
+			sourceTree = "<group>";
+		};
+		CA01FCB62910A8BB91596419 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				CA01FD26AF404D12C291AFD0 /* GimdowBleHandler.swift */,
+				CA01F5922B2B89D2813B8CC6 /* GimdowBytesUtils.swift */,
+				CA01F4A5007F203B50FE53C6 /* GimdowProtocolV2.swift */,
+				CA01F93CC156A283AB79E97C /* GimdowBleDevice.swift */,
+				CA01F3B5461C8B4AC37FF2AA /* GimdowError.swift */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		CA01FE1A49FAF87715A695E9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CA01F35C2FBA703AD76EC1E4 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CA01FF069CD361962C071A93 /* GimdowLibUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CA01F7A1665F9AD70BB9E9B4 /* GimdowLibUITests.swift */,
+				CA01F3B3A9ECB11999BA6043 /* GimdowLibUITestsLaunchTests.swift */,
+			);
+			path = GimdowLibUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CA01F692CF8B690243881928 /* GimdowLib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA01F48EC121933FAB65F1BC /* Build configuration list for PBXNativeTarget "GimdowLib" */;
+			buildPhases = (
+				CA01F24CDA408A318EBC58C0 /* Sources */,
+				CA01F8A5C10CB126C298F9C5 /* Frameworks */,
+				CA01FA8E7595FE8745D33B21 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GimdowLib;
+			productName = GimdowLib;
+			productReference = CA01FF1F770AC00BA6F651A1 /* GimdowLib.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CA01FCC0FCAB10F753A6B697 /* GimdowLibUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA01FD83ADF9D99920C50052 /* Build configuration list for PBXNativeTarget "GimdowLibUITests" */;
+			buildPhases = (
+				CA01F0BB0700C68DB3F8A90E /* Sources */,
+				CA01F003662331CE8CA0AD0E /* Frameworks */,
+				CA01F384D357447A0B434C97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA01F970D6D4E87C0DA5A8E8 /* PBXTargetDependency */,
+			);
+			name = GimdowLibUITests;
+			productName = GimdowLibUITests;
+			productReference = CA01F5B6B942C37C068EE002 /* GimdowLibUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		CA01FF5720EDEBE4C86DCCD5 /* GimdowLibTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA01FCD881174D4607DF60AE /* Build configuration list for PBXNativeTarget "GimdowLibTests" */;
+			buildPhases = (
+				CA01FCFFBC264ADCDBC24D42 /* Sources */,
+				CA01FB9E053C8E66D52AA369 /* Frameworks */,
+				CA01F4251D1F0D55E1828222 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA01F1E504FF5B9068AD240F /* PBXTargetDependency */,
+			);
+			name = GimdowLibTests;
+			productName = GimdowLibTests;
+			productReference = CA01F266114CF9420D77F5C7 /* GimdowLibTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CA01F574D91C3021DDC44D54 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = CA01F044B3FE14D85B2B0A1F /* Build configuration list for PBXProject "GimdowLib" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CA01F3C10D22E11C80B6C930;
+			productRefGroup = CA01F7D6E4C7E3F38635F161 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CA01F692CF8B690243881928 /* GimdowLib */,
+				CA01FF5720EDEBE4C86DCCD5 /* GimdowLibTests */,
+				CA01FCC0FCAB10F753A6B697 /* GimdowLibUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CA01F384D357447A0B434C97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA01F4251D1F0D55E1828222 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA01FA8E7595FE8745D33B21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA01FAB901EF7F207900F712 /* Assets.xcassets in Resources */,
+				CA01F8AFC34C8F4D0642EE22 /* Preview Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CA01F0BB0700C68DB3F8A90E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA01F8E6BE2B3B82093692BE /* GimdowLibUITests.swift in Sources */,
+				CA01FDD3B78C94B948F3AC6B /* GimdowLibUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA01F24CDA408A318EBC58C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA01FF603782ACA140172C27 /* GimdowLibApp.swift in Sources */,
+				CA01FE677904DCB25647B13B /* ContentView.swift in Sources */,
+				CA01F37A9989E27DDF7FDEA8 /* GimdowBleHandler.swift in Sources */,
+				CA01FB3BE0F48DD3A4C34DAD /* GimdowBytesUtils.swift in Sources */,
+				CA01F9A14462FF66C86B7D09 /* GimdowProtocolV2.swift in Sources */,
+				CA01F90DA0A438B457F67CF7 /* GimdowBleDevice.swift in Sources */,
+				CA01FAF75C93BAC50D6CA077 /* GimdowError.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA01FCFFBC264ADCDBC24D42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA01F645AF19999B9E6FCB6B /* GimdowLibTests.swift in Sources */,
+				CA01FE66E80351443CCCCC58 /* BytesUtilsTests.swift in Sources */,
+				CA01F4EB894848AA6308AA3C /* ProtocolV2Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CA01F1E504FF5B9068AD240F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA01F692CF8B690243881928 /* GimdowLib */;
+			targetProxy = CA01F444863372FA8BFB7F2D /* PBXContainerItemProxy */;
+		};
+		CA01F970D6D4E87C0DA5A8E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA01F692CF8B690243881928 /* GimdowLib */;
+			targetProxy = CA01FFC09E264193BA4C28CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CA01F006B47E2B8DFECD4833 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GimdowLib.app/GimdowLib";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deutschehospitality.GimdowLibTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+		CA01F0D469B6BBDFE51836F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CA01F28AEAD27C4521E4D6FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CA01F4F7EC94682428FDC0C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deutschehospitality.GimdowLibUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GimdowLib;
+			};
+			name = Debug;
+		};
+		CA01F7E3D9A07BBBE9C32017 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deutschehospitality.GimdowLibUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GimdowLib;
+			};
+			name = Release;
+		};
+		CA01FA90BBF466CD99EE33BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GimdowLib/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deutschehospitality.GimdowLib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CA01FB16993A3C7CD429A42F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"GimdowLib/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deutschehospitality.GimdowLib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CA01FFBBC787B0042C515B94 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/GimdowLib.app/GimdowLib";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deutschehospitality.GimdowLibTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CA01F044B3FE14D85B2B0A1F /* Build configuration list for PBXProject "GimdowLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA01F0D469B6BBDFE51836F9 /* Debug */,
+				CA01F28AEAD27C4521E4D6FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA01F48EC121933FAB65F1BC /* Build configuration list for PBXNativeTarget "GimdowLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA01FA90BBF466CD99EE33BF /* Debug */,
+				CA01FB16993A3C7CD429A42F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CA01FCD881174D4607DF60AE /* Build configuration list for PBXNativeTarget "GimdowLibTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA01FFBBC787B0042C515B94 /* Debug */,
+				CA01F006B47E2B8DFECD4833 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CA01FD83ADF9D99920C50052 /* Build configuration list for PBXNativeTarget "GimdowLibUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA01F4F7EC94682428FDC0C9 /* Debug */,
+				CA01F7E3D9A07BBBE9C32017 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CA01F574D91C3021DDC44D54 /* Project object */;
+}
