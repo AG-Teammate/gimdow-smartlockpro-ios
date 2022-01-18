@@ -50,7 +50,6 @@ class ProtocolV2Tests: XCTestCase {
         XCTAssertEqual(crcAuth3, device.crcAuth3)
     }
 
-    // todo: fix
     func test_buildSendKeyV2Correct() throws {
         let output: [UInt8] = [UInt8(bitPattern: -54), UInt8(bitPattern: -42)] + fKey
         let device = try GimdowBleDevice("AGUA", 0)
@@ -64,4 +63,20 @@ class ProtocolV2Tests: XCTestCase {
         XCTAssertEqual(crcAuth4, device.crcAuth4)
     }
 
+    func test_createKeyPartsV2Correct() {
+        let part1: [UInt8] = [4, -86, 17, -119, -124, -78, 26, -113, -1].map{ UInt8(bitPattern: $0) }
+        let part2: [UInt8] = [3, 29, 56, -35, -98, 122, -113, -118, 109, -44, -81, -125, 102, 56, -96, -85, 32].map{ UInt8(bitPattern: $0) }
+        let part3: [UInt8] = [2, 92, 91, -78, 42, -122, -10, -42, -67, -28, -24, 51, 31, -96, -91, 36, -24].map{ UInt8(bitPattern: $0) }
+        let part4: [UInt8] = [1, 37, -76, -99, 79, -80, 16, 48, 0, -100, 40, 94, 59, 41, -35, 9, 62].map{ UInt8(bitPattern: $0) }
+        let part5: [UInt8] = [0, -79, 32, 16, 0, 99, 35, 78, 7, -78, -119, 17, -48, 80, 32, 94, 116].map{ UInt8(bitPattern: $0) }
+
+        let result = GimdowProtocolV2.createKeyPartsV2(fKey)
+
+        XCTAssertEqual(5, result.count)
+        XCTAssertEqual(part1, result[0])
+        XCTAssertEqual(part2, result[1])
+        XCTAssertEqual(part3, result[2])
+        XCTAssertEqual(part4, result[3])
+        XCTAssertEqual(part5, result[4])
+    }
 }

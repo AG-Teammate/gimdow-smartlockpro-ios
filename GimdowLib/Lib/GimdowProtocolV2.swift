@@ -44,10 +44,10 @@ class GimdowProtocolV2 {
     }
 
     static func buildSendKeyV2(_ decodedGimdowKey: [UInt8], _ device: GimdowBleDevice) -> [UInt8] {
-        let crcDataBytes: [UInt8] = [0, device.crcAuth2.lsb, device.crcAuth2.msb]
-                + device.sessionKey[3...]
-                + [device.crcAuth3.lsb, device.crcAuth3.msb]
-                + decodedGimdowKey
+        var crcDataBytes: [UInt8] = [0, device.crcAuth2.lsb, device.crcAuth2.msb]
+        crcDataBytes += device.sessionKey
+        crcDataBytes += [device.crcAuth3.lsb, device.crcAuth3.msb]
+        crcDataBytes += decodedGimdowKey
 
         let crcAuth4 = crcDataBytes.calculateCrc16(device.crcAuth1)
         device.crcAuth4 = crcAuth4
@@ -64,7 +64,7 @@ class GimdowProtocolV2 {
         let remainder = keyBytes.count % 16
         let partsCount = remainder == 0 ? fullParts : fullParts + 1
 
-        for partIndex in stride(from: partsCount - 1, through: 1, by: 1) {
+        for partIndex in stride(from: partsCount - 1, through: 0, by: -1) {
             let partLength = partIndex == partsCount - 1 ? remainder : 16
             keyParts.append(createKeyChunkV2(keyBytes, partIndex, partLength))
         }
@@ -73,6 +73,6 @@ class GimdowProtocolV2 {
     }
 
     static func createKeyChunkV2(_ keyBytes: [UInt8], _ partIndex: Int, _ size: Int) -> [UInt8] {
-        [(UInt8)(partIndex)] + keyBytes[partIndex*16..<size]
+        [(UInt8)(partIndex)] + keyBytes.dropFirst(partIndex*16).prefix(size)
     }
 }
