@@ -14,7 +14,7 @@ class GimdowProtocolV2 {
             return nil
         }
 
-        os_log(OSLogType.debug, "CRC1: <\(crcAuth1)>")
+        os_log(.debug, "CRC1: <\(crcAuth1)>")
         device.crcAuth1 = crcAuth1
         let sessionKey = gimdowBytesUtils.generateRandomBytes(2)
         device.sessionKey[0] = sessionKey[0]
@@ -24,19 +24,19 @@ class GimdowProtocolV2 {
         response[15] = crc.lsb
         response[16] = crc.msb
         let crcAuth2 = response.loHiCrc
-        os_log(OSLogType.debug, "CRC2: <\(crcAuth2)>")
+        os_log(.debug, "CRC2: <\(crcAuth2)>")
         device.crcAuth2 = crcAuth2
         return response
     }
 
     static func checkAuthPassed(_ frameBytes: [UInt8], _ device: GimdowBleDevice) -> Bool {
-        os_log(OSLogType.debug, "Auth passed: <\(frameBytes.hexString)>")
+        os_log(.debug, "Auth passed: <\(frameBytes.hexString)>")
         let crcAuth3 = frameBytes.calculateFrameCrc16(device.crcAuth2)
         if !frameBytes.isCrcValid(crcAuth3) {
             return false
         }
 
-        os_log(OSLogType.debug, "CRC3: <\(crcAuth3)>")
+        os_log(.debug, "CRC3: <\(crcAuth3)>")
         device.crcAuth3 = crcAuth3
         device.sessionKey[2] = frameBytes[5]
         device.sessionKey[3] = frameBytes[6]
@@ -51,10 +51,10 @@ class GimdowProtocolV2 {
 
         let crcAuth4 = crcDataBytes.calculateCrc16(device.crcAuth1)
         device.crcAuth4 = crcAuth4
-        os_log(OSLogType.debug, "CRC4: <\(crcAuth4)>")
+        os_log(.debug, "CRC4: <\(crcAuth4)>")
 
         let keyBytes: [UInt8] = [crcAuth4.lsb, crcAuth4.msb] + decodedGimdowKey
-        os_log(OSLogType.debug, "Key: <\(keyBytes.hexString)>")
+        os_log(.debug, "Key: <\(keyBytes.hexString)>")
         return keyBytes
     }
 
@@ -72,7 +72,7 @@ class GimdowProtocolV2 {
         return keyParts
     }
 
-    static func createKeyChunkV2(_ keyBytes: [UInt8], _ partIndex: Int, _ size: Int) -> [UInt8] {
+    private static func createKeyChunkV2(_ keyBytes: [UInt8], _ partIndex: Int, _ size: Int) -> [UInt8] {
         [(UInt8)(partIndex)] + keyBytes.dropFirst(partIndex*16).prefix(size)
     }
 }
