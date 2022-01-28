@@ -7,4 +7,5 @@ import Foundation
 enum GimdowError : Error {
     case invalidDeviceName(_ deviceName: String)
     case parameterIsRequired(_ paramName: String)
+    case invalidKeyData
 }

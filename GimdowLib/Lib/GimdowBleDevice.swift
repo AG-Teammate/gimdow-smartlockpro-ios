@@ -59,7 +59,7 @@ class GimdowBleDevice {
     }
 
     func isValidForKey(_ keyName: String, _ specialAreas: [Int], _ minRssi: Int) -> Bool {
-        if keyName.isEmpty || rssi < minRssi { return false }
+        if keyName.isEmpty || rssi < minRssi || rssi == 127  { return false }
         if let keyNumber = Int(keyName) {
             if keyNumber == deviceNumber {
                 os_log(.debug, "BLE device \(self.deviceName) matches key: \(keyName)")
