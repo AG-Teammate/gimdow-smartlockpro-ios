@@ -53,6 +53,18 @@ class GimdowBleHandler: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if #available(iOS 10.0, *) {
             switch (central.state) {
+            case .unsupported:
+                delegate?.didFail(.ERROR_CM_STATE_UNSUPPORTED)
+                delegate?.didFinishOpen()
+                break
+            case .unauthorized:
+                delegate?.didFail(.ERROR_CM_STATE_UNAUTHORIZED)
+                delegate?.didFinishOpen()
+                break
+            case .poweredOff:
+                delegate?.didFail(.ERROR_CM_STATE_POWEREDOFF)
+                delegate?.didFinishOpen()
+                break
             case .poweredOn:
                 startScan(central)
                 break
@@ -61,7 +73,19 @@ class GimdowBleHandler: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
             }
         } else {
             switch central.state.rawValue {
-            case 5: //CBCentralManagerState.poweredOn:
+            case 2:
+                delegate?.didFail(.ERROR_CM_STATE_UNSUPPORTED)
+                delegate?.didFinishOpen()
+                break
+            case 3:
+                delegate?.didFail(.ERROR_CM_STATE_UNAUTHORIZED)
+                delegate?.didFinishOpen()
+                break
+            case 4:
+                delegate?.didFail(.ERROR_CM_STATE_POWEREDOFF)
+                delegate?.didFinishOpen()
+                break
+            case 5:
                 startScan(central)
                 break
             default:
@@ -131,7 +155,7 @@ class GimdowBleHandler: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
             return
         }
 
-        peripheral.discoverCharacteristics(characteristicsArray, for: service)
+        peripheral.discoverCharacteristics([CHAR_RX_UUID, CHAR_TX_UUID], for: service)
     }
 
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {

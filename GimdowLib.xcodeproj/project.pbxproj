@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA01F0CD679DAA135A281528 /* GimdowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01F6E76B2C5730122DC51B /* GimdowViewModel.swift */; };
+		CA01F30DBA7CF551A84B17E7 /* GimdowBleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01FBD35BD09E2222AA20EB /* GimdowBleManager.swift */; };
 		CA01F37A9989E27DDF7FDEA8 /* GimdowBleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01FD26AF404D12C291AFD0 /* GimdowBleHandler.swift */; };
 		CA01F4EB894848AA6308AA3C /* ProtocolV2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01FE3F267D55DC659838C5 /* ProtocolV2Tests.swift */; };
 		CA01F645AF19999B9E6FCB6B /* GimdowLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01F5767FFDECC4019F5B9F /* GimdowLibTests.swift */; };
@@ -17,9 +19,12 @@
 		CA01FAB901EF7F207900F712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA01FCC7CA14E962C3BDA91A /* Assets.xcassets */; };
 		CA01FAF75C93BAC50D6CA077 /* GimdowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01F3B5461C8B4AC37FF2AA /* GimdowError.swift */; };
 		CA01FB3BE0F48DD3A4C34DAD /* GimdowBytesUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01F5922B2B89D2813B8CC6 /* GimdowBytesUtils.swift */; };
+		CA01FD1E2F71B489EA8C39FE /* GimdowLockListenerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01F9770ADBB04D7807F799 /* GimdowLockListenerDelegate.swift */; };
+		CA01FD5F31999AEF8BE824AC /* GimdowKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01FA4D1FAAB19EB230C82C /* GimdowKey.swift */; };
 		CA01FDD3B78C94B948F3AC6B /* GimdowLibUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01F3B3A9ECB11999BA6043 /* GimdowLibUITestsLaunchTests.swift */; };
 		CA01FE66E80351443CCCCC58 /* BytesUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01F135FE8CBA1A02BACAF3 /* BytesUtilsTests.swift */; };
 		CA01FE677904DCB25647B13B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01F8CAFDF520EBC3CAE22D /* ContentView.swift */; };
+		CA01FF05E140D36D52019330 /* GimdowLockResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01F33320DC4C474A5E2192 /* GimdowLockResult.swift */; };
 		CA01FF603782ACA140172C27 /* GimdowLibApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01F7C2EE292ECDC39E2AB0 /* GimdowLibApp.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +48,7 @@
 /* Begin PBXFileReference section */
 		CA01F135FE8CBA1A02BACAF3 /* BytesUtilsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BytesUtilsTests.swift; sourceTree = "<group>"; };
 		CA01F266114CF9420D77F5C7 /* GimdowLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GimdowLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA01F33320DC4C474A5E2192 /* GimdowLockResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GimdowLockResult.swift; sourceTree = "<group>"; };
 		CA01F35C2FBA703AD76EC1E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CA01F3B3A9ECB11999BA6043 /* GimdowLibUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GimdowLibUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CA01F3B5461C8B4AC37FF2AA /* GimdowError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GimdowError.swift; sourceTree = "<group>"; };
@@ -50,10 +56,14 @@
 		CA01F5767FFDECC4019F5B9F /* GimdowLibTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GimdowLibTests.swift; sourceTree = "<group>"; };
 		CA01F5922B2B89D2813B8CC6 /* GimdowBytesUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GimdowBytesUtils.swift; sourceTree = "<group>"; };
 		CA01F5B6B942C37C068EE002 /* GimdowLibUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GimdowLibUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA01F6E76B2C5730122DC51B /* GimdowViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GimdowViewModel.swift; sourceTree = "<group>"; };
 		CA01F7A1665F9AD70BB9E9B4 /* GimdowLibUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GimdowLibUITests.swift; sourceTree = "<group>"; };
 		CA01F7C2EE292ECDC39E2AB0 /* GimdowLibApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GimdowLibApp.swift; sourceTree = "<group>"; };
 		CA01F8CAFDF520EBC3CAE22D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CA01F93CC156A283AB79E97C /* GimdowBleDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GimdowBleDevice.swift; sourceTree = "<group>"; };
+		CA01F9770ADBB04D7807F799 /* GimdowLockListenerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GimdowLockListenerDelegate.swift; sourceTree = "<group>"; };
+		CA01FA4D1FAAB19EB230C82C /* GimdowKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GimdowKey.swift; sourceTree = "<group>"; };
+		CA01FBD35BD09E2222AA20EB /* GimdowBleManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GimdowBleManager.swift; sourceTree = "<group>"; };
 		CA01FCC7CA14E962C3BDA91A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA01FD26AF404D12C291AFD0 /* GimdowBleHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GimdowBleHandler.swift; sourceTree = "<group>"; };
 		CA01FE3F267D55DC659838C5 /* ProtocolV2Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtocolV2Tests.swift; sourceTree = "<group>"; };
@@ -123,6 +133,7 @@
 				CA01F7C2EE292ECDC39E2AB0 /* GimdowLibApp.swift */,
 				CA01F8CAFDF520EBC3CAE22D /* ContentView.swift */,
 				CA01FCB62910A8BB91596419 /* Lib */,
+				CA01F6E76B2C5730122DC51B /* GimdowViewModel.swift */,
 			);
 			path = GimdowLib;
 			sourceTree = "<group>";
@@ -135,6 +146,10 @@
 				CA01F4A5007F203B50FE53C6 /* GimdowProtocolV2.swift */,
 				CA01F93CC156A283AB79E97C /* GimdowBleDevice.swift */,
 				CA01F3B5461C8B4AC37FF2AA /* GimdowError.swift */,
+				CA01F33320DC4C474A5E2192 /* GimdowLockResult.swift */,
+				CA01F9770ADBB04D7807F799 /* GimdowLockListenerDelegate.swift */,
+				CA01FA4D1FAAB19EB230C82C /* GimdowKey.swift */,
+				CA01FBD35BD09E2222AA20EB /* GimdowBleManager.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -283,6 +298,11 @@
 				CA01F9A14462FF66C86B7D09 /* GimdowProtocolV2.swift in Sources */,
 				CA01F90DA0A438B457F67CF7 /* GimdowBleDevice.swift in Sources */,
 				CA01FAF75C93BAC50D6CA077 /* GimdowError.swift in Sources */,
+				CA01FF05E140D36D52019330 /* GimdowLockResult.swift in Sources */,
+				CA01FD1E2F71B489EA8C39FE /* GimdowLockListenerDelegate.swift in Sources */,
+				CA01FD5F31999AEF8BE824AC /* GimdowKey.swift in Sources */,
+				CA01F30DBA7CF551A84B17E7 /* GimdowBleManager.swift in Sources */,
+				CA01F0CD679DAA135A281528 /* GimdowViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
