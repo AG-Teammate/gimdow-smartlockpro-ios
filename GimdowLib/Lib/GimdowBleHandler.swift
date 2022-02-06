@@ -23,6 +23,7 @@ enum RxMode: Int {
 
 class GimdowBleHandler: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     var delegate: GimdowLockListenerDelegate? = nil
+    var scanTimeoutSecs: TimeInterval = 30
 
     var peripherals = Dictionary<CBPeripheral, NSNumber>()
 
@@ -51,55 +52,34 @@ class GimdowBleHandler: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
     }
 
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        if #available(iOS 10.0, *) {
-            switch (central.state) {
-            case .unsupported:
-                delegate?.didFail(.ERROR_CM_STATE_UNSUPPORTED)
-                delegate?.didFinishOpen()
-                break
-            case .unauthorized:
-                delegate?.didFail(.ERROR_CM_STATE_UNAUTHORIZED)
-                delegate?.didFinishOpen()
-                break
-            case .poweredOff:
-                delegate?.didFail(.ERROR_CM_STATE_POWEREDOFF)
-                delegate?.didFinishOpen()
-                break
-            case .poweredOn:
-                startScan(central)
-                break
-            default:
-                break
-            }
-        } else {
-            switch central.state.rawValue {
-            case 2:
-                delegate?.didFail(.ERROR_CM_STATE_UNSUPPORTED)
-                delegate?.didFinishOpen()
-                break
-            case 3:
-                delegate?.didFail(.ERROR_CM_STATE_UNAUTHORIZED)
-                delegate?.didFinishOpen()
-                break
-            case 4:
-                delegate?.didFail(.ERROR_CM_STATE_POWEREDOFF)
-                delegate?.didFinishOpen()
-                break
-            case 5:
-                startScan(central)
-                break
-            default:
-                break
-            }
+        switch (central.state) {
+        case .unsupported:
+            delegate?.didFail(.ERROR_CM_STATE_UNSUPPORTED)
+            delegate?.didFinishOpen()
+            break
+        case .unauthorized:
+            delegate?.didFail(.ERROR_CM_STATE_UNAUTHORIZED)
+            delegate?.didFinishOpen()
+            break
+        case .poweredOff:
+            delegate?.didFail(.ERROR_CM_STATE_POWEREDOFF)
+            delegate?.didFinishOpen()
+            break
+        case .poweredOn:
+            startScan(central)
+            break
+        default:
+            break
         }
     }
 
     private func startScan(_ central: CBCentralManager) {
-        scanTimer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(scanTimeout), userInfo: nil, repeats: false)
+        scanTimer = Timer.scheduledTimer(timeInterval: scanTimeoutSecs, target: self, selector: #selector(scanTimeout), userInfo: nil, repeats: false)
 
         cm = central
         rxMode = .RX_MODE_SCAN
         central.scanForPeripherals(withServices: [SERVICE_UUID], options: [CBCentralManagerScanOptionAllowDuplicatesKey: true])
+        delegate?.didStartOpen()
     }
 
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String: Any], rssi RSSI: NSNumber) {
@@ -137,8 +117,9 @@ class GimdowBleHandler: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
 
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         os_log(.debug, "centralManager didDisconnectPeripheral")
-        if error != nil {
+        if error != nil && rxMode != .RX_MODE_INIT {
             os_log(.error, "centralManager didDisconnectPeripheral error: \(String(describing: error))")
+            hardDisconnect()
         }
         delegate?.didFinishOpen()
     }
@@ -217,11 +198,13 @@ class GimdowBleHandler: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
         }
         os_log(.debug, "peripheral didWriteValueForCharacteristic")
 
-        if device.keyParts.count > 0 && characteristic.value != nil
-                   && [UInt8](characteristic.value!) == device.keyParts[keyPart] {
+        if device.keyParts.count > 0
+//                   && characteristic.value != nil
+//                   && [UInt8](characteristic.value!) == device.keyParts[keyPart]
+        {
             if keyPart < device.keyParts.count - 1 {
                 keyPart += 1
-                usleep(100000)
+                usleep(50000)
                 sendBlock(keyPart, peripheral)
             } else {
                 keyResultTimer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(keyResultTimeout), userInfo: nil, repeats: false)
